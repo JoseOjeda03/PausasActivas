@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const posturaRoutes = require('./routes/postura');
 const UsuariosRoutes = require('./routes/Usuarios');
+const sesionesRoutes = require('./routes/sesiones');
 const app = express();
 
 // Middlewares
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
     res.send('API funcionando correctamente 🚀');
 });
 app.use('/api/postura', posturaRoutes);
+app.use('/api/sesiones', sesionesRoutes);
 app.use('/api/usuarios', UsuariosRoutes);
 // Arrancar servidor
 app.listen(PORT, () => {
