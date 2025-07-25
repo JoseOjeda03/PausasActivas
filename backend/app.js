@@ -29,5 +29,5 @@ app.use('/api/postura', posturaRoutes);
 app.use('/api/usuarios', UsuariosRoutes);
 // Arrancar servidor
 app.listen(PORT, () => {
-    console.log(`🌐 Servidor backend en http://localhost:${PORT}`);
+    console.log(`🌐 Servidor backend en https://pausasactivas.onrender.com/${PORT}`);
 });
