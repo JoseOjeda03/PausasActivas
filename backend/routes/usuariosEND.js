@@ -2,42 +2,37 @@ const express = require('express');
 const router = express.Router();
 const UsuarioEND = require('../models/UsuarioEND');
 
-// Registrar nuevo usuario con embedding
-router.post('/registrar', async (req, res) => {
+// Registrar un nuevo usuario
+router.post('/', async (req, res) => {
   try {
-    const { nombre, email, embedding } = req.body;
+    const { nombre, embedding } = req.body;
 
-    // Validaciones
-    if (!nombre || typeof nombre !== 'string' || nombre.trim() === '') {
-      return res.status(400).json({ error: 'El nombre es obligatorio y debe ser una cadena válida.' });
+    if (!nombre || !embedding) {
+      return res.status(400).json({ error: 'Faltan campos obligatorios.' });
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-      return res.status(400).json({ error: 'El correo electrónico no es válido.' });
+    if (!Array.isArray(embedding) || embedding.length !== 512) {
+      return res.status(400).json({ error: 'El embedding debe tener exactamente 512 números.' });
     }
 
-    if (!embedding || !Array.isArray(embedding) || embedding.length !== 512) {
-      return res.status(400).json({ error: 'El embedding debe ser un arreglo de 512 valores numéricos.' });
-    }
-
-    if (!embedding.every(num => typeof num === 'number')) {
-      return res.status(400).json({ error: 'Todos los valores del embedding deben ser numéricos.' });
-    }
-
-    // Verificar si el email ya existe
-    const existe = await UsuarioEND.findOne({ email });
-    if (existe) {
-      return res.status(409).json({ error: 'Ya existe un usuario con ese correo electrónico.' });
-    }
-
-    const nuevoUsuario = new UsuarioEND({ nombre, email, embedding });
+    const nuevoUsuario = new UsuarioEND({ nombre, embedding });
     await nuevoUsuario.save();
 
-    res.status(201).json({ mensaje: 'Usuario registrado correctamente.' });
+    res.status(201).json({ mensaje: 'Usuario registrado correctamente.', usuario: nuevoUsuario });
   } catch (error) {
-    console.error(error);
+    console.error('Error al registrar usuario:', error);
     res.status(500).json({ error: 'Error al registrar el usuario.' });
+  }
+});
+
+// Obtener todos los usuarios
+router.get('/', async (req, res) => {
+  try {
+    const usuarios = await UsuarioEND.find().sort({ fechaRegistro: -1 });
+    res.json(usuarios);
+  } catch (error) {
+    console.error('Error al obtener usuarios:', error);
+    res.status(500).json({ error: 'Error al obtener los usuarios.' });
   }
 });
 
