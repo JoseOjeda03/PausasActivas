@@ -5,6 +5,7 @@ const cors = require('cors');
 const posturaRoutes = require('./routes/postura');
 const UsuariosRoutes = require('./routes/Usuarios');
 const sesionesRoutes = require('./routes/sesiones');
+const usuarioENDRoutes = require('./routes/usuariosEND');
 const app = express();
 
 // Middlewares
@@ -29,6 +30,8 @@ app.get('/', (req, res) => {
 app.use('/api/postura', posturaRoutes);
 app.use('/api/sesiones', sesionesRoutes);
 app.use('/api/usuarios', UsuariosRoutes);
+app.use('/api/usuarioEND', usuarioENDRoutes);
+
 // Arrancar servidor
 app.listen(PORT, () => {
     console.log(`🌐 Servidor backend en https://pausasactivas.onrender.com/${PORT}`);
