@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UsuarioEndSchema = new mongoose.Schema({
+const UsuarioENDSchema = new mongoose.Schema({
   nombre: {
     type: String,
     required: true
@@ -9,10 +9,8 @@ const UsuarioEndSchema = new mongoose.Schema({
     type: [Number],
     required: true,
     validate: {
-      validator: function(arr) {
-        return arr.length === 512;
-      },
-      message: 'El embedding debe contener exactamente 512 valores.'
+      validator: arr => Array.isArray(arr) && arr.length === 512,
+      message: 'El embedding debe contener exactamente 512 valores numéricos.'
     }
   },
   fechaRegistro: {
@@ -21,4 +19,4 @@ const UsuarioEndSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('UsuarioEND', UsuarioEndSchema);
+module.exports = mongoose.model('UsuarioEND', UsuarioENDSchema);
