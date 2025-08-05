@@ -6,12 +6,14 @@ const UsuarioENDSchema = new mongoose.Schema({
     required: true
   },
   embedding: {
-    type: [Number],
-    required: true,
+    type: [[Number]], // Matriz de arrays de números
     validate: {
-      validator: arr => Array.isArray(arr) && arr.length === 512,
-      message: 'El embedding debe contener exactamente 512 valores numéricos.'
-    }
+      validator: function(arr) {
+        return Array.isArray(arr) && arr.every(subArr => Array.isArray(subArr) && subArr.length === 512);
+      },
+      message: 'Cada embedding debe ser un array de 512 números.'
+    },
+    required: true
   },
   fechaRegistro: {
     type: Date,
