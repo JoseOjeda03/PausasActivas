@@ -1,0 +1,218 @@
+[
+    {
+        "usuario": "omar",
+        "fecha_inicio": "2025-07-21 13:20:02",
+        "fecha_fin": "2025-07-21 13:20:21",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "omar",
+        "fecha_inicio": "2025-07-21 16:25:05",
+        "fecha_fin": "2025-07-21 16:25:50",
+        "trabajo_total_segundos": 20,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 2,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "omar",
+        "fecha_inicio": "2025-07-21 16:32:41",
+        "fecha_fin": "2025-07-21 16:33:01",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "fecha_inicio": "2025-07-30 15:53:00",
+        "fecha_fin": "2025-07-30 15:53:19",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-07-30 15:56:51",
+        "fin_sesion": "2025-07-30 15:57:33",
+        "trabajo_total_segundos": 20,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 2,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-07-30 16:13:03",
+        "fin_sesion": "2025-07-30 16:13:22",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-07-30 16:13:30",
+        "fin_sesion": "2025-07-30 16:13:44",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-07-30 16:19:16",
+        "fin_sesion": "2025-07-30 16:19:31",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-07-30 16:23:28",
+        "fin_sesion": "2025-07-30 16:24:26",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar prueba 2",
+        "inicio_sesion": "2025-07-30 16:28:03",
+        "fin_sesion": "2025-07-30 16:28:23",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar",
+        "inicio_sesion": "2025-08-05 10:17:14",
+        "fin_sesion": "2025-08-05 10:17:57",
+        "trabajo_total_segundos": 20,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 2,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-07 08:08:29",
+        "fin_sesion": "2025-08-07 08:20:31",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-07 08:23:40",
+        "fin_sesion": "2025-08-07 08:25:01",
+        "trabajo_total_segundos": 30,
+        "descanso_total_segundos": 20,
+        "ciclos_trabajo": 3,
+        "ciclos_descanso": 2
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 11:50:03",
+        "fin_sesion": "2025-08-09 11:51:04",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:06:42",
+        "fin_sesion": "2025-08-09 12:07:01",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:18:09",
+        "fin_sesion": "2025-08-09 12:18:38",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:21:52",
+        "fin_sesion": "2025-08-09 12:22:26",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:23:11",
+        "fin_sesion": "2025-08-09 12:23:54",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:31:23",
+        "fin_sesion": "2025-08-09 12:31:50",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-09 12:34:09",
+        "fin_sesion": "2025-08-09 12:34:54",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-20 09:21:58",
+        "fin_sesion": "2025-08-20 09:22:38",
+        "trabajo_total_segundos": 10,
+        "descanso_total_segundos": 10,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Omar Camilo Castellanos",
+        "inicio_sesion": "2025-08-20 10:00:01",
+        "fin_sesion": "2025-08-20 10:02:49",
+        "trabajo_total_segundos": 60,
+        "descanso_total_segundos": 60,
+        "ciclos_trabajo": 1,
+        "ciclos_descanso": 1
+    },
+    {
+        "usuario": "Prueba2",
+        "inicio_sesion": "2025-09-02 00:39:30",
+        "fin_sesion": "2025-09-02 00:39:52",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    },
+    {
+        "usuario": "EmpleadoDePrueba",
+        "inicio_sesion": "2025-09-02 00:42:33",
+        "fin_sesion": "2025-09-02 00:43:29",
+        "trabajo_total_segundos": 0,
+        "descanso_total_segundos": 0,
+        "ciclos_trabajo": 0,
+        "ciclos_descanso": 0
+    }
+]

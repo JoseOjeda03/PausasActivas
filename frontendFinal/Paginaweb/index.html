@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Sesiones de Monitoreo</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Sesiones de Monitoreo</h1>
+
+    <div class="filtros">
+      <label for="usuario">Filtrar por usuario:</label>
+      <input type="text" id="usuario" placeholder="Nombre de usuario">
+      <label for="fecha">Filtrar por fecha (YYYY-MM-DD):</label>
+      <input type="date" id="fecha">
+      <button onclick="filtrarDatos()">Buscar</button>
+    </div>
+
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Inicio</th>
+          <th>Fin</th>
+          <th>Trabajo (seg)</th>
+          <th>Descanso (seg)</th>
+          <th>Ciclos Trabajo</th>
+          <th>Pausas activas</th>
+          <th>¿Descansó correctamente?</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla">
+        <tr><td colspan="8">Cargando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let sesiones = [];
+
+    async function obtenerDatos() {
+      try {
+        const respuesta = await fetch('https://pausasactivas.onrender.com/api/sesiones');
+        sesiones = await respuesta.json();
+        mostrarDatos(sesiones);
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      }
+    }
+
+    function mostrarDatos(datos) {
+      const cuerpo = document.getElementById('cuerpo-tabla');
+      cuerpo.innerHTML = "";
+
+      if (datos.length === 0) {
+        cuerpo.innerHTML = "<tr><td colspan='8'>No se encontraron resultados.</td></tr>";
+        return;
+      }
+
+      datos.forEach(item => {
+        const inicio = item.inicio_sesion ? new Date(item.inicio_sesion).toLocaleString("es-CO") : "N/A";
+        const fin = item.fin_sesion ? new Date(item.fin_sesion).toLocaleString("es-CO") : "N/A";
+        const descansoOk = item.ciclos_trabajo > 0 && item.ciclos_descanso === item.ciclos_trabajo;
+
+
+        const fila = `
+          <tr>  
+            <td>${item.usuario || "N/A"}</td>
+            <td>${inicio}</td>
+            <td>${fin}</td>
+            <td>${item.trabajo_total_segundos ?? 0}</td>
+            <td>${item.descanso_total_segundos ?? 0}</td>
+            <td>${item.ciclos_trabajo ?? 0}</td>
+            <td>${item.ciclos_descanso ?? 0}</td>
+            <td style="color:${descansoOk ? 'green' : 'red'}">${descansoOk ? 'Sí' : 'No'}</td>
+          </tr>
+        `;
+        cuerpo.innerHTML += fila;
+      });
+    }
+
+    function filtrarDatos() {
+      const usuario = document.getElementById("usuario").value.toLowerCase();
+      const fecha = document.getElementById("fecha").value;
+
+      const filtrados = sesiones.filter(item => {
+        const coincideUsuario = usuario === "" || (item.usuario && item.usuario.toLowerCase().includes(usuario));
+        const coincideFecha = fecha === "" || (item.inicio_sesion && item.inicio_sesion.startsWith(fecha));
+        return coincideUsuario && coincideFecha;
+      });
+
+      mostrarDatos(filtrados);
+    }
+
+    obtenerDatos();
+  </script>
+</body>
+</html>
